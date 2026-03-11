@@ -1,0 +1,141 @@
+﻿<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kah-Prod - Admin Studio</title>
+    <meta name="description" content="Admin Kah-Prod" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="admin-body">
+    <div class="bg-orbit"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-k-pattern"></div>
+
+    <header class="site-header">
+      <nav class="nav">
+        <a class="logo" href="index.html" aria-label="Kah-Prod">
+          <span class="logo-mark">K</span>
+          <span class="logo-word">
+            <span class="logo-text">Kah-Prod</span>
+            <span class="logo-tag">Label Rap & Chanson</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav>
+          <a href="index.html">Accueil</a>
+          <a href="artists.html">Artistes</a>
+          <a href="label.html">Le Label</a>
+        </div>
+        <div class="nav-actions">
+          <a class="cta" href="index.html">Retour site</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-login" data-admin-login>
+        <div class="admin-login-card">
+          <h1>Admin Studio</h1>
+          <p>Accès réservé. Mot de passe requis.</p>
+          <input type="password" placeholder="Mot de passe" data-admin-password />
+          <button type="button" data-admin-submit>Entrer</button>
+          <small>Astuce : change le mot de passe dans data.js</small>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-admin-panel hidden>
+        <div class="admin-header">
+          <div>
+            <h1>Admin Studio</h1>
+            <p>Modifie le contenu du site. Les changements sont stockés localement sur ce navigateur.</p>
+            <div class="admin-message" data-admin-message></div>
+          </div>
+          <div class="admin-actions">
+            <button type="button" class="ghost" data-admin-export>Exporter JSON</button>
+            <label class="ghost">
+              Importer JSON
+              <input type="file" accept="application/json" data-admin-import hidden />
+            </label>
+            <button type="button" class="cta" data-admin-save>Enregistrer</button>
+          </div>
+        </div>
+
+        <div class="admin-grid">
+          <section class="admin-section">
+            <h2>Hero</h2>
+            <div data-admin-hero></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Stats</h2>
+            <div data-admin-stats></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Signature</h2>
+            <div data-admin-signature></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Artiste phare</h2>
+            <div data-admin-featured></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Artistes</h2>
+            <div data-admin-artists></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Sorties</h2>
+            <div data-admin-releases></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Clips</h2>
+            <div data-admin-videos></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Événements</h2>
+            <div data-admin-events></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Crédibilité</h2>
+            <div data-admin-proof></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Réseaux</h2>
+            <div data-admin-socials></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Contact</h2>
+            <div data-admin-contact></div>
+          </section>
+
+          <section class="admin-section">
+            <h2>Le Label</h2>
+            <div data-admin-label></div>
+          </section>
+        </div>
+
+        <div class="admin-footer">
+          <button type="button" class="ghost" data-admin-reset>Réinitialiser</button>
+          <span>Les modifications sont locales. Pour publier, exporte le JSON ou contacte ton dev.</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
+
+
+
+

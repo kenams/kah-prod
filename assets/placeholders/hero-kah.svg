@@ -1,0 +1,37 @@
+﻿<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121117"/>
+      <stop offset="0.5" stop-color="#2b1a1f"/>
+      <stop offset="1" stop-color="#0a0a0b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 240) rotate(45) scale(520 520)">
+      <stop offset="0" stop-color="#d8b56a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#d8b56a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f2e7"/>
+      <stop offset="0.4" stop-color="#b8b0a4"/>
+      <stop offset="0.7" stop-color="#f4eee3"/>
+      <stop offset="1" stop-color="#8d8378"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g opacity="0.12">
+    <path d="M0 160H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M0 320H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M0 480H1600" stroke="#ffffff" stroke-width="1"/>
+    <path d="M0 640H1600" stroke="#ffffff" stroke-width="1"/>
+  </g>
+  <g opacity="0.22">
+    <path d="M200 0V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M500 0V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M800 0V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M1100 0V900" stroke="#ffffff" stroke-width="1"/>
+    <path d="M1400 0V900" stroke="#ffffff" stroke-width="1"/>
+  </g>
+  <text x="980" y="560" font-family="Bodoni Moda, serif" font-size="420" fill="url(#metal)" opacity="0.75">K</text>
+  <text x="120" y="170" font-family="Space Grotesk, sans-serif" font-size="28" letter-spacing="8" fill="#d8b56a">KAH-PROD</text>
+  <text x="120" y="220" font-family="Space Grotesk, sans-serif" font-size="16" letter-spacing="5" fill="#b8b6b1">LABEL RAP FRANCOPHONE</text>
+</svg>

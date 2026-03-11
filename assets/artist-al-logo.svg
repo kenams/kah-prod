@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Logo AL">
+  <defs>
+    <linearGradient id="neon-blue" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4cc9ff" />
+      <stop offset="100%" stop-color="#2a6bff" />
+    </linearGradient>
+    <linearGradient id="neon-pink" x1="1" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff4fd8" />
+      <stop offset="100%" stop-color="#ff2d6f" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="640" height="480" fill="#0b0b12" />
+  <rect x="24" y="24" width="592" height="432" rx="28" fill="#101019" stroke="#1d1d2a" />
+  <g filter="url(#glow)">
+    <ellipse cx="320" cy="240" rx="220" ry="150" fill="none" stroke="url(#neon-blue)" stroke-width="10" />
+    <ellipse cx="320" cy="240" rx="220" ry="150" fill="none" stroke="url(#neon-pink)" stroke-width="4" />
+  </g>
+  <g filter="url(#glow)">
+    <text x="220" y="285" font-family="Arial Black, Arial, sans-serif" font-size="140" fill="url(#neon-blue)">A</text>
+    <text x="340" y="285" font-family="Arial Black, Arial, sans-serif" font-size="140" fill="url(#neon-pink)">L</text>
+  </g>
+  <text x="320" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#cbd5ff" opacity="0.8">AL</text>
+</svg>

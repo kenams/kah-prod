@@ -1,0 +1,21 @@
+﻿<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f0f12"/>
+      <stop offset="0.6" stop-color="#2b1f25"/>
+      <stop offset="1" stop-color="#0a0a0b"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8f2e7"/>
+      <stop offset="0.4" stop-color="#b8b0a4"/>
+      <stop offset="0.7" stop-color="#f4eee3"/>
+      <stop offset="1" stop-color="#8d8378"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <circle cx="240" cy="260" r="220" fill="#d8b56a" opacity="0.15"/>
+  <rect x="80" y="860" width="740" height="2" fill="#ffffff" opacity="0.18"/>
+  <text x="580" y="820" font-family="Bodoni Moda, serif" font-size="340" fill="url(#metal)" opacity="0.78">K</text>
+  <text x="80" y="940" font-family="Space Grotesk, sans-serif" font-size="22" letter-spacing="6" fill="#d8b56a">KAH-PROD</text>
+  <text x="80" y="980" font-family="Space Grotesk, sans-serif" font-size="14" letter-spacing="4" fill="#b8b6b1">ARTIST PORTRAIT</text>
+</svg>

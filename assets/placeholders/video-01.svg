@@ -1,0 +1,19 @@
+﻿<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#121216"/>
+      <stop offset="0.6" stop-color="#2b1a1f"/>
+      <stop offset="1" stop-color="#0a0a0b"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 240) rotate(45) scale(420 420)">
+      <stop offset="0" stop-color="#d8b56a" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#d8b56a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <rect width="1280" height="720" fill="url(#glow)"/>
+  <circle cx="980" cy="360" r="120" fill="#ffffff" opacity="0.12"/>
+  <polygon points="960,320 1040,360 960,400" fill="#ffffff" opacity="0.75"/>
+  <text x="80" y="120" font-family="Space Grotesk, sans-serif" font-size="24" letter-spacing="6" fill="#d8b56a">KAH-PROD</text>
+  <text x="80" y="160" font-family="Space Grotesk, sans-serif" font-size="14" letter-spacing="4" fill="#b8b6b1">VIDEO CLIP</text>
+</svg>

@@ -1,0 +1,124 @@
+﻿openapi: 3.0.3
+info:
+  title: Kah-Prod API
+  version: 0.1.0
+servers:
+  - url: https://api.kah-prod.com
+paths:
+  /auth/login:
+    post:
+      summary: Admin login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: OK
+  /site-data:
+    get:
+      summary: Public site data
+      responses:
+        '200':
+          description: OK
+  /artists:
+    get:
+      summary: List artists
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create artist
+      responses:
+        '201':
+          description: Created
+  /artists/{id}:
+    patch:
+      summary: Update artist
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete artist
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+  /releases:
+    get:
+      summary: List releases
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create release
+      responses:
+        '201':
+          description: Created
+  /videos:
+    get:
+      summary: List videos
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create video
+      responses:
+        '201':
+          description: Created
+  /events:
+    get:
+      summary: List events
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create event
+      responses:
+        '201':
+          description: Created
+  /socials:
+    get:
+      summary: List socials
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create social
+      responses:
+        '201':
+          description: Created
+  /media/upload:
+    post:
+      summary: Upload media
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
