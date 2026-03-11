@@ -167,13 +167,11 @@ async function checkLogin() {
     const remote = await apiGetState();
     if (remote) {
       state = applyState(remote);
-      unlock();
-      return;
+    } else {
+      state = applyState(state);
     }
-    if (IS_LOCAL) {
-      unlock();
-      return;
-    }
+    unlock();
+    return;
   }
 }
 
@@ -637,6 +635,45 @@ function renderArtists() {
     card.appendChild(metricsWrap);
 
     card.appendChild(createMediaField("Photo", artist.photo, (value) => (artist.photo = value)));
+
+    artist.gallery = artist.gallery || [];
+    const galleryWrap = document.createElement("div");
+    galleryWrap.className = "admin-list";
+    const galleryTitle = document.createElement("h3");
+    galleryTitle.textContent = "Galerie photos";
+    galleryWrap.appendChild(galleryTitle);
+
+    artist.gallery.forEach((item, itemIndex) => {
+      const galleryCard = document.createElement("div");
+      galleryCard.className = "admin-card";
+      galleryCard.appendChild(
+        createMediaField("Photo", item, (value) => (artist.gallery[itemIndex] = value))
+      );
+      galleryCard.appendChild(
+        createButton(
+          "Supprimer",
+          () => {
+            artist.gallery.splice(itemIndex, 1);
+            renderArtists();
+          },
+          "ghost"
+        )
+      );
+      galleryWrap.appendChild(galleryCard);
+    });
+
+    galleryWrap.appendChild(
+      createButton(
+        "Ajouter une photo",
+        () => {
+          artist.gallery.push("");
+          renderArtists();
+        },
+        "ghost admin-add"
+      )
+    );
+
+    card.appendChild(galleryWrap);
 
     artist.themes = artist.themes || [];
     const themesWrap = document.createElement("div");
