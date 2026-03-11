@@ -83,6 +83,7 @@ const panel = document.querySelector("[data-admin-panel]");
 const passwordInput = document.querySelector("[data-admin-password]");
 const loginButton = document.querySelector("[data-admin-submit]");
 const message = document.querySelector("[data-admin-message]");
+const loginMessage = document.querySelector("[data-admin-login-message]");
 
 const saveButton = document.querySelector("[data-admin-save]");
 const exportButton = document.querySelector("[data-admin-export]");
@@ -97,9 +98,29 @@ function showMessage(text) {
   }, 3000);
 }
 
+function showLoginMessage(text) {
+  if (!loginMessage) return;
+  loginMessage.textContent = text || "";
+  if (!text) return;
+  setTimeout(() => {
+    if (loginMessage.textContent === text) {
+      loginMessage.textContent = "";
+    }
+  }, 3000);
+}
+
 function unlock() {
-  if (loginLayer) loginLayer.hidden = true;
-  if (panel) panel.hidden = false;
+  document.body.classList.add("admin-auth");
+  if (loginLayer) {
+    loginLayer.hidden = true;
+    loginLayer.style.display = "none";
+    loginLayer.setAttribute("aria-hidden", "true");
+  }
+  if (panel) {
+    panel.hidden = false;
+    panel.style.display = "grid";
+  }
+  showLoginMessage("");
   renderAll();
 }
 
@@ -178,7 +199,7 @@ async function checkLogin() {
 async function handleLogin() {
   const pass = passwordInput ? passwordInput.value.trim() : "";
   if (!pass) {
-    showMessage("Entre un mot de passe");
+    showLoginMessage("Entre un mot de passe");
     return;
   }
 
@@ -201,7 +222,7 @@ async function handleLogin() {
     }
   }
 
-  showMessage(result.error || "Mot de passe incorrect");
+  showLoginMessage(result.error || "Mot de passe incorrect");
 }
 
 if (loginButton) {
