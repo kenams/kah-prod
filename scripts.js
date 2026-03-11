@@ -211,8 +211,8 @@ function renderFeatured() {
         <p>${featured.description || artist.bio}</p>
         <div class="featured-metrics">${metricsHtml}</div>
         <div class="hero-actions">
-          <a class="cta" href="artist-${artist.slug}.html">Voir le profil</a>
-          <a class="ghost" href="#releases">Discographie</a>
+          <a class="cta" href="/artist/${artist.slug}/">Voir le profil</a>
+          <a class="ghost" href="/#releases">Discographie</a>
         </div>
       </div>
     </div>
@@ -236,7 +236,7 @@ function renderArtists() {
             <h3>${artist.name}</h3>
             <p>${artist.style} - ${artist.city}</p>
             <span>${artist.highlight || ""}</span>
-            <a class="link" href="artist-${artist.slug}.html">Voir le profil</a>
+            <a class="link" href="/artist/${artist.slug}/">Voir le profil</a>
           </div>
         </article>
       `
@@ -249,7 +249,7 @@ function renderArtists() {
     roster.innerHTML = DATA.artists
       .map(
         (artist) => `
-        <a class="roster-card reveal" href="artist-${artist.slug}.html">
+        <a class="roster-card reveal" href="/artist/${artist.slug}/">
           ${
             artist.flagship || (DATA.featured && artist.slug === DATA.featured.slug)
               ? '<span class="badge">Phare</span>'

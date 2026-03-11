@@ -1,7 +1,7 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-al-logo"
+    dataVersion: "2026-03-11-links"
   },
   brand: {
     name: "Kah-Prod",
@@ -14,7 +14,7 @@
     description:
       "Depuis Toulouse, production premium, image ciné, stratégie digitale sur-mesure. Nous signons des artistes rap et chanson francophones ambitieux en France.",
     highlightTag: "Direction artistique - 4K - Premium",
-    background: "assets/placeholders/hero-kah.svg",
+    background: "/assets/placeholders/hero-kah.svg",
     release: {
       label: "Release du mois",
       title: "Cœur brisé",
@@ -25,10 +25,10 @@
     }
   },
   placeholders: {
-    hero: "assets/placeholders/hero-kah.svg",
-    artist: "assets/placeholders/artist-01.svg",
-    cover: "assets/placeholders/cover-01.svg",
-    video: "assets/placeholders/video-01.svg"
+    hero: "/assets/placeholders/hero-kah.svg",
+    artist: "/assets/placeholders/artist-01.svg",
+    cover: "/assets/placeholders/cover-01.svg",
+    video: "/assets/placeholders/video-01.svg"
   },
   stats: [
     { value: "1", label: "Artiste signé" },
@@ -65,7 +65,7 @@
     {
       slug: "al",
       name: "AL",
-      photo: "assets/artist-al-logo.jpg",
+      photo: "/assets/artist-al-logo.jpg",
       flagship: true,
       style: "Rap sincère",
       city: "Île-de-France",
@@ -135,13 +135,14 @@
         spotify: ""
       },
       discography: [
-        { title: "Cœur brisé", type: "Single", year: "2026", cover: "assets/placeholders/cover-01.svg" },
-        { title: "Débrouillard", type: "EP", year: "2026", cover: "assets/placeholders/cover-02.svg" },
-        { title: "91", type: "Single", year: "2025", cover: "assets/placeholders/cover-03.svg" }
+        { title: "Cœur brisé", type: "Single", year: "2026", cover: "/assets/artist-al-logo.jpg" },
+        { title: "Débrouillard", type: "EP", year: "2026", cover: "/assets/placeholders/cover-02.svg" },
+        { title: "91", type: "Single", year: "2025", cover: "/assets/placeholders/cover-03.svg" }
       ],
       videos: [
-        { title: "Cœur brisé", year: "2026", thumbnail: "assets/placeholders/video-01.svg" },
-        { title: "91", year: "2025", thumbnail: "assets/placeholders/video-02.svg" }
+        { title: "Cœur brisé", year: "2026", thumbnail: "/assets/artist-al-logo.jpg" },
+        { title: "91", year: "2025", thumbnail: "/assets/placeholders/video-02.svg" },
+        { title: "Session studio", year: "2026", thumbnail: "/assets/placeholders/video-02.svg" }
       ]
     }
   ],
@@ -151,21 +152,21 @@
       artist: "AL",
       type: "Single",
       year: "2026",
-      cover: "assets/placeholders/cover-01.svg"
+      cover: "/assets/artist-al-logo.jpg"
     },
     {
       title: "Débrouillard",
       artist: "AL",
       type: "EP",
       year: "2026",
-      cover: "assets/placeholders/cover-02.svg"
+      cover: "/assets/placeholders/cover-02.svg"
     },
     {
       title: "91",
       artist: "AL",
       type: "Single",
       year: "2025",
-      cover: "assets/placeholders/cover-03.svg"
+      cover: "/assets/placeholders/cover-03.svg"
     }
   ],
   videos: [
@@ -173,13 +174,19 @@
       title: "Cœur brisé",
       artist: "AL",
       year: "2026",
-      thumbnail: "assets/placeholders/video-01.svg"
+      thumbnail: "/assets/artist-al-logo.jpg"
     },
     {
       title: "91",
       artist: "AL",
       year: "2025",
-      thumbnail: "assets/placeholders/video-02.svg"
+      thumbnail: "/assets/placeholders/video-02.svg"
+    },
+    {
+      title: "Session studio",
+      artist: "AL",
+      year: "2026",
+      thumbnail: "/assets/placeholders/video-02.svg"
     }
   ],
   events: [
@@ -244,4 +251,5 @@
     ]
   }
 };
+
 
