@@ -1237,6 +1237,9 @@ function renderLabel() {
     const card = document.createElement("div");
     card.className = "admin-card";
     card.appendChild(createInput("Nom", member.name, (value) => (member.name = value)));
+    card.appendChild(
+      createInput("Sous-nom (parenthèses)", member.subname, (value) => (member.subname = value))
+    );
     card.appendChild(createInput("Role", member.role, (value) => (member.role = value)));
     card.appendChild(
       createButton("Supprimer", () => {
@@ -1251,7 +1254,7 @@ function renderLabel() {
     createButton(
       "Ajouter un membre",
       () => {
-        state.label.team.push({ name: "", role: "" });
+        state.label.team.push({ name: "", subname: "", role: "" });
         renderLabel();
       },
       "ghost admin-add"

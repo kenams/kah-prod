@@ -30,6 +30,25 @@ if (navToggle && navLinks) {
   });
 }
 
+function setActiveNav() {
+  const path = window.location.pathname || "/";
+  let target = "";
+  if (path.startsWith("/label")) {
+    target = "/label/";
+  } else if (path.startsWith("/artists") || path.startsWith("/artist/")) {
+    target = "/artists/";
+  } else if (path === "/" || path === "/index.html") {
+    target = "/";
+  }
+
+  if (!target) return;
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    if (link.getAttribute("href") === target) {
+      link.classList.add("active");
+    }
+  });
+}
+
 function loadData() {
   const fallback = window.KAH_DATA || {};
   const dataVersion = fallback.settings ? fallback.settings.dataVersion : "";
@@ -430,6 +449,7 @@ function renderLabelPage() {
         <div class="team-card reveal">
           <div class="team-avatar">${member.name[0]}</div>
           <h3>${member.name}</h3>
+          ${member.subname ? `<div class="team-subname">(${member.subname})</div>` : ""}
           <p>${member.role}</p>
         </div>
       `
@@ -606,6 +626,23 @@ function renderArtistPage() {
     pressSection.hidden = !hasPress;
   }
 
+  const galleryWrap = document.querySelector("[data-artist-gallery]");
+  const gallerySection = document.querySelector("#gallery");
+  if (galleryWrap && artist.gallery && artist.gallery.length) {
+    galleryWrap.innerHTML = artist.gallery
+      .map(
+        (src) => `
+        <div class="gallery-card reveal" data-gallery="${src || ""}"></div>
+      `
+      )
+      .join("");
+  } else if (galleryWrap) {
+    galleryWrap.innerHTML = "";
+  }
+  if (gallerySection) {
+    gallerySection.hidden = !(artist.gallery && artist.gallery.length);
+  }
+
   const portraitSection = document.querySelector("#portrait");
   const hasPortrait =
     artist.tagline ||
@@ -687,6 +724,15 @@ function hydrateMedia() {
       el.style.backgroundPosition = "center";
     }
   });
+
+  document.querySelectorAll("[data-gallery]").forEach((el) => {
+    const src = el.getAttribute("data-gallery");
+    if (src) {
+      el.style.backgroundImage = `url(${src})`;
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+    }
+  });
 }
 
 function initPlayers() {
@@ -764,6 +810,7 @@ async function refreshFromApi() {
 
 renderAll();
 refreshFromApi();
+setActiveNav();
 
 
 

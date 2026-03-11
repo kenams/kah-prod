@@ -1,7 +1,7 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-al-clean"
+    dataVersion: "2026-03-11-q-only"
   },
   brand: {
     name: "Kah-Prod",
@@ -231,14 +231,12 @@
       { title: "Déploiement", text: "Stratégie digitale, playlists, presse et activations terrain." }
     ],
     team: [
-      { name: "Kader", role: "CEO - Direction artistique" },
-      { name: "Lina", role: "Head of Digital" },
       {
-        name: "Quentin Napti (Q)",
+        name: "Q",
+        subname: "Quentin Napti",
         role:
           "Community manager - visuels, thèmes, accompagnement artiste, communication TikTok / Instagram / Facebook"
       },
-      { name: "Mehdi", role: "Production & Studio" }
     ],
     services: [
       { title: "Management", text: "Définition du plan de carrière, booking, partenariats." },
