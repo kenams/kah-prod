@@ -1,7 +1,7 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-nav-gallery"
+    dataVersion: "2026-03-11-al-clean"
   },
   brand: {
     name: "Kah-Prod",
@@ -17,9 +17,9 @@
     background: "/assets/placeholders/hero-kah.svg",
     release: {
       label: "Release du mois",
-      title: "Cœur brisé",
+      title: "Single phare",
       artist: "AL",
-      description: "Single phare, rap sincère et texte cœur brisé.",
+      description: "Single phare, rap sincère et texte direct.",
       date: "Avril 2026",
       meta: "Single - 2 min 58"
     }
@@ -54,7 +54,7 @@
     tag: "Artiste phare",
     headline: "AL",
     description:
-      "L'artiste phare du label. Rap sincère, cœur brisé, textes directs. Une plume qui raconte le réel sans filtre.",
+      "L'artiste phare du label. Rap sincère, textes directs. Une plume qui raconte le réel sans filtre.",
     metrics: [
       { value: "3 ans", label: "De rap" },
       { value: "91", label: "Origines" },
@@ -71,35 +71,39 @@
       city: "Île-de-France",
       highlight: "Artiste phare - rap depuis 3 ans",
       bio:
-        "Rap sincère, vie pas facile, cœur brisé. AL raconte la réalité du 91 avec une plume directe et une énergie brute.",
+        "Rap sincère, vie pas facile. AL raconte la réalité du 91 avec une plume directe et une énergie brute.",
       metrics: [
         { value: "3 ans", label: "De rap" },
         { value: "91", label: "Origines" },
         { value: "Phare", label: "Artiste label" }
       ],
-      tagline: "Le rap du réel, entre survie, loyautés et cœur brisé.",
+      tagline: "Le rap du réel, entre survie, loyautés et vérité.",
       story:
-        "Né en Île-de-France, AL rappe la réalité du 91 sans masque. Il transforme la galère, les loyautés et les fractures du quotidien en textes directs. Sa force : une écriture sincère, un flow brut et une présence qui marque.",
-      quote: "Je rappe ce que je vis : la rue, la vérité, le cœur brisé.",
+        "Né en Île-de-France, AL rappe la réalité du 91 sans masque. Son style mélange une Cloud Rap mélancolique et une Drill incisive, avec des instrumentales planantes et des basses qui font vibrer les murs. Sa plume refuse les clichés : insomnie, ambition qui empêche de dormir, difficulté de rester authentique à l'ère des algorithmes. Son look mêle streetwear vintage et pièces chinées, bonnet enfoncé jusqu'aux sourcils pour rester dans sa bulle créative. Son ambition n'est pas la célébrité : c'est le besoin d'être entendu, autant de temps à monter ses clips qu'à peaufiner ses rimes.",
+      quote: "Je rappe ce que je vis : la rue, la vérité, la loyauté.",
       highlights: [
         {
-          title: "Plume sincère",
-          text: "Des textes directs et authentiques sur la vraie vie."
+          title: "Son Style",
+          text:
+            "Un mélange de Cloud Rap mélancolique et de Drill incisive. Il aime les contrastes : des instrumentales planantes avec des basses qui font vibrer les murs."
         },
         {
-          title: "Énergie brute",
-          text: "Une voix rugueuse et une présence qui marque sur scène."
+          title: "Sa Plume",
+          text:
+            "Il refuse les clichés. Ses textes parlent de l'insomnie, de l'ambition qui empêche de dormir, et de la difficulté de rester authentique à l'ère des algorithmes."
         },
         {
-          title: "Identité 91",
-          text: "Le 91 au cœur du propos, sans filtre ni décor."
+          title: "Son Look",
+          text:
+            "Un mélange de streetwear vintage et de pièces chinées. Il porte souvent un bonnet enfoncé jusqu'aux sourcils, même en plein été, pour rester dans sa bulle créative."
         },
         {
-          title: "Rap sincère",
-          text: "Un style sur la survie, les loyautés et les fractures du cœur."
+          title: "Son Ambition",
+          text:
+            "Ce n'est pas seulement la célébrité qui le motive, c'est le besoin d'être entendu. Il passe autant de temps à monter ses clips qu'à peaufiner ses rimes."
         }
       ],
-      themes: ["Vérité", "Vie pas facile", "Cœur brisé", "Loyautés", "Survie", "Famille"],
+      themes: ["Vérité", "Vie pas facile", "Loyautés", "Survie", "Famille", "Détermination"],
       signature: ["Voix rauque", "Mélodies tristes", "Punchlines du réel", "Refrains entêtants"],
       timeline: [
         {
@@ -119,8 +123,8 @@
         },
         {
           year: "2026",
-          title: "Cœur brisé",
-          description: "Single phare, rap sincère et cœur brisé."
+          title: "Single phare",
+          description: "Single phare, rap sincère et textes directs."
         }
       ],
       press: {
@@ -135,12 +139,10 @@
         spotify: ""
       },
       discography: [
-        { title: "Cœur brisé", type: "Single", year: "2026", cover: "/assets/artist-al-logo.jpg" },
         { title: "Débrouillard", type: "EP", year: "2026", cover: "/assets/placeholders/cover-02.svg" },
         { title: "91", type: "Single", year: "2025", cover: "/assets/placeholders/cover-03.svg" }
       ],
       videos: [
-        { title: "Cœur brisé", year: "2026", thumbnail: "/assets/artist-al-logo.jpg" },
         { title: "91", year: "2025", thumbnail: "/assets/placeholders/video-02.svg" },
         { title: "Session studio", year: "2026", thumbnail: "/assets/placeholders/video-02.svg" }
       ],
@@ -155,13 +157,6 @@
     }
   ],
   releases: [
-    {
-      title: "Cœur brisé",
-      artist: "AL",
-      type: "Single",
-      year: "2026",
-      cover: "/assets/artist-al-logo.jpg"
-    },
     {
       title: "Débrouillard",
       artist: "AL",
@@ -178,12 +173,6 @@
     }
   ],
   videos: [
-    {
-      title: "Cœur brisé",
-      artist: "AL",
-      year: "2026",
-      thumbnail: "/assets/artist-al-logo.jpg"
-    },
     {
       title: "91",
       artist: "AL",
