@@ -6,7 +6,9 @@ const TABLE = process.env.SUPABASE_TABLE || "site_content";
 
 function getSupabase() {
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_KEY;
+  const key =
+    process.env.SUPABASE_SERVICE_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) return null;
   return createClient(url, key, {
     auth: { persistSession: false },
@@ -50,7 +52,8 @@ module.exports = async (req, res) => {
       .maybeSingle();
 
     if (error) {
-      sendJson(res, 500, { error: "fetch_failed" });
+      console.error("[kah-prod] supabase fetch_failed", error);
+      sendJson(res, 500, { error: "fetch_failed", detail: error.message });
       return;
     }
     sendJson(res, 200, { data: data ? data.payload : null });
@@ -89,7 +92,8 @@ module.exports = async (req, res) => {
   });
 
   if (error) {
-    sendJson(res, 500, { error: "save_failed" });
+    console.error("[kah-prod] supabase save_failed", error);
+    sendJson(res, 500, { error: "save_failed", detail: error.message });
     return;
   }
 
