@@ -233,7 +233,11 @@
     team: [
       { name: "Kader", role: "CEO - Direction artistique" },
       { name: "Lina", role: "Head of Digital" },
-      { name: "Quentin NABTI", role: "Réseaux, médias, idées de clip & accompagnement artiste" },
+      {
+        name: "Quentin Napti (Q)",
+        role:
+          "Community manager - visuels, thèmes, accompagnement artiste, communication TikTok / Instagram / Facebook"
+      },
       { name: "Mehdi", role: "Production & Studio" }
     ],
     services: [
