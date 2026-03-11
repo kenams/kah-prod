@@ -11,9 +11,16 @@
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(8, 8, 10, 0.85);
-  backdrop-filter: blur(12px);
+  background: rgba(8, 8, 10, 0.96);
+  backdrop-filter: none;
   z-index: 50;
+}
+
+.admin-body .bg-orbit,
+.admin-body .bg-noise,
+.admin-body .bg-grid,
+.admin-body .bg-k-pattern {
+  filter: none;
 }
 
 .admin-login-card {
