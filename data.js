@@ -1,7 +1,7 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-links"
+    dataVersion: "2026-03-11-nav-gallery"
   },
   brand: {
     name: "Kah-Prod",
@@ -32,7 +32,7 @@
   },
   stats: [
     { value: "1", label: "Artiste signé" },
-    { value: "8 ans", label: "Expérience terrain" },
+    { value: "3 ans", label: "Expérience terrain" },
     { value: "1", label: "Clip phare en production" }
   ],
   signature: [
@@ -56,7 +56,7 @@
     description:
       "L'artiste phare du label. Rap sincère, cœur brisé, textes directs. Une plume qui raconte le réel sans filtre.",
     metrics: [
-      { value: "8 ans", label: "De rap" },
+      { value: "3 ans", label: "De rap" },
       { value: "91", label: "Origines" },
       { value: "Phare", label: "Artiste label" }
     ]
@@ -69,11 +69,11 @@
       flagship: true,
       style: "Rap sincère",
       city: "Île-de-France",
-      highlight: "Artiste phare - rap depuis 8 ans",
+      highlight: "Artiste phare - rap depuis 3 ans",
       bio:
         "Rap sincère, vie pas facile, cœur brisé. AL raconte la réalité du 91 avec une plume directe et une énergie brute.",
       metrics: [
-        { value: "8 ans", label: "De rap" },
+        { value: "3 ans", label: "De rap" },
         { value: "91", label: "Origines" },
         { value: "Phare", label: "Artiste label" }
       ],
@@ -143,6 +143,14 @@
         { title: "Cœur brisé", year: "2026", thumbnail: "/assets/artist-al-logo.jpg" },
         { title: "91", year: "2025", thumbnail: "/assets/placeholders/video-02.svg" },
         { title: "Session studio", year: "2026", thumbnail: "/assets/placeholders/video-02.svg" }
+      ],
+      gallery: [
+        "/assets/artist-al-logo.jpg",
+        "/assets/placeholders/artist-01.svg",
+        "/assets/placeholders/artist-02.svg",
+        "/assets/placeholders/artist-03.svg",
+        "/assets/placeholders/artist-04.svg",
+        "/assets/placeholders/artist-05.svg"
       ]
     }
   ],
