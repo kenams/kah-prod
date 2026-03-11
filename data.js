@@ -83,24 +83,20 @@
       quote: "Je rappe ce que je vis : la rue, la vérité, la loyauté.",
       highlights: [
         {
-          title: "Son Style",
-          text:
-            "Un mélange de Cloud Rap mélancolique et de Drill incisive. Il aime les contrastes : des instrumentales planantes avec des basses qui font vibrer les murs."
+          title: "Énergie live",
+          text: "Présence scénique directe, interaction forte avec le public, set compact et efficace."
         },
         {
-          title: "Sa Plume",
-          text:
-            "Il refuse les clichés. Ses textes parlent de l'insomnie, de l'ambition qui empêche de dormir, et de la difficulté de rester authentique à l'ère des algorithmes."
+          title: "Direction visuelle",
+          text: "Univers visuel contrasté, clips ciné, identité graphique cohérente sur chaque sortie."
         },
         {
-          title: "Son Look",
-          text:
-            "Un mélange de streetwear vintage et de pièces chinées. Il porte souvent un bonnet enfoncé jusqu'aux sourcils, même en plein été, pour rester dans sa bulle créative."
+          title: "Focus studio",
+          text: "Travail précis en studio, structures propres, refrains mémorables et mix actuel."
         },
         {
-          title: "Son Ambition",
-          text:
-            "Ce n'est pas seulement la célébrité qui le motive, c'est le besoin d'être entendu. Il passe autant de temps à monter ses clips qu'à peaufiner ses rimes."
+          title: "Communauté",
+          text: "Proximité avec les auditeurs, retours constants et storytelling en temps réel."
         }
       ],
       themes: ["Vérité", "Vie pas facile", "Loyautés", "Survie", "Famille", "Détermination"],
