@@ -1,7 +1,7 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-al"
+    dataVersion: "2026-03-11-al-logo"
   },
   brand: {
     name: "Kah-Prod",
@@ -65,7 +65,7 @@
     {
       slug: "al",
       name: "AL",
-      photo: "assets/artist-al-logo.svg",
+      photo: "assets/artist-al-logo.jpg",
       flagship: true,
       style: "Rap sincère",
       city: "Île-de-France",
