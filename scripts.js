@@ -65,7 +65,7 @@ function mergeDeep(base, override) {
   return override !== undefined ? override : base;
 }
 
-const DATA = loadData();
+let DATA = loadData();
 window.KAH_ACTIVE_DATA = DATA;
 
 function setText(selector, value) {
@@ -725,21 +725,45 @@ function initPlayers() {
   });
 }
 
-renderHero();
-renderSignature();
-renderFeatured();
-renderArtists();
-renderReleases();
-renderVideos();
-renderProof();
-renderSocials();
-renderEvents();
-renderContacts();
-renderLabelPage();
-renderArtistPage();
-hydrateMedia();
-initPlayers();
-observeReveals();
+function renderAll() {
+  renderHero();
+  renderSignature();
+  renderFeatured();
+  renderArtists();
+  renderReleases();
+  renderVideos();
+  renderProof();
+  renderSocials();
+  renderEvents();
+  renderContacts();
+  renderLabelPage();
+  renderArtistPage();
+  hydrateMedia();
+  initPlayers();
+  observeReveals();
+}
+
+async function refreshFromApi() {
+  try {
+    const response = await fetch("/api/content", { cache: "no-store" });
+    if (!response.ok) return;
+    const payload = await response.json();
+    if (!payload || !payload.data) return;
+    DATA = mergeDeep(window.KAH_DATA || {}, payload.data);
+    window.KAH_ACTIVE_DATA = DATA;
+    try {
+      localStorage.setItem("kah-prod-data", JSON.stringify(DATA));
+    } catch (error) {
+      // ignore storage errors
+    }
+    renderAll();
+  } catch (error) {
+    return;
+  }
+}
+
+renderAll();
+refreshFromApi();
 
 
 

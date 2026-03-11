@@ -1,6 +1,9 @@
 ﻿const DEFAULT_DATA = window.KAH_DATA || {};
 
 const DATA_VERSION = DEFAULT_DATA.settings ? DEFAULT_DATA.settings.dataVersion : "";
+const TOKEN_KEY = "kah-prod-token";
+const LOCAL_KEY = "kah-prod-data";
+const IS_LOCAL = ["localhost", "127.0.0.1"].includes(window.location.hostname);
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -8,18 +11,18 @@ function clone(value) {
 
 function loadState() {
   try {
-    const saved = localStorage.getItem("kah-prod-data");
+    const saved = localStorage.getItem(LOCAL_KEY);
     if (saved) {
       const parsed = JSON.parse(saved);
       const savedVersion = parsed && parsed.settings ? parsed.settings.dataVersion : "";
       if (!DATA_VERSION || DATA_VERSION === savedVersion) {
-        return normalizeState(parsed);
+        return applyState(parsed);
       }
     }
   } catch (error) {
-    return normalizeState(clone(DEFAULT_DATA));
+    return applyState(clone(DEFAULT_DATA));
   }
-  return normalizeState(clone(DEFAULT_DATA));
+  return applyState(clone(DEFAULT_DATA));
 }
 
 function normalizeState(data) {
@@ -51,6 +54,28 @@ function normalizeState(data) {
   return safe;
 }
 
+function mergeDeep(base, override) {
+  if (Array.isArray(base)) {
+    return Array.isArray(override) ? override : base;
+  }
+  if (base && typeof base === "object") {
+    const result = { ...base };
+    if (override && typeof override === "object" && !Array.isArray(override)) {
+      Object.keys(override).forEach((key) => {
+        if (override[key] === undefined) return;
+        result[key] = mergeDeep(base[key], override[key]);
+      });
+    }
+    return result;
+  }
+  return override !== undefined ? override : base;
+}
+
+function applyState(next) {
+  const merged = mergeDeep(DEFAULT_DATA, next || {});
+  return normalizeState(merged);
+}
+
 let state = loadState();
 
 const loginLayer = document.querySelector("[data-admin-login]");
@@ -78,21 +103,107 @@ function unlock() {
   renderAll();
 }
 
-function checkLogin() {
-  const stored = localStorage.getItem("kah-prod-admin");
-  if (stored === "1") {
-    unlock();
+function getToken() {
+  return localStorage.getItem(TOKEN_KEY) || "";
+}
+
+function setToken(token) {
+  if (token) {
+    localStorage.setItem(TOKEN_KEY, token);
   }
 }
 
-function handleLogin() {
-  const pass = state.settings.adminPassword || "kahprod";
-  if (passwordInput && passwordInput.value === pass) {
-    localStorage.setItem("kah-prod-admin", "1");
-    unlock();
-  } else {
-    showMessage("Mot de passe incorrect");
+function clearToken() {
+  localStorage.removeItem(TOKEN_KEY);
+}
+
+async function apiLogin(password) {
+  try {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password })
+    });
+    if (!response.ok) {
+      return { ok: false, error: "Identifiants invalides" };
+    }
+    const payload = await response.json();
+    return { ok: true, token: payload.token };
+  } catch (error) {
+    return { ok: false, error: "API indisponible" };
   }
+}
+
+async function apiGetState() {
+  try {
+    const response = await fetch("/api/content", { cache: "no-store" });
+    if (!response.ok) return null;
+    const payload = await response.json();
+    return payload && payload.data ? payload.data : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function apiSaveState(token, payload) {
+  try {
+    const response = await fetch("/api/content", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({ data: payload })
+    });
+    return response.ok;
+  } catch (error) {
+    return false;
+  }
+}
+
+async function checkLogin() {
+  const token = getToken();
+  if (token) {
+    const remote = await apiGetState();
+    if (remote) {
+      state = applyState(remote);
+      unlock();
+      return;
+    }
+    if (IS_LOCAL) {
+      unlock();
+      return;
+    }
+  }
+}
+
+async function handleLogin() {
+  const pass = passwordInput ? passwordInput.value.trim() : "";
+  if (!pass) {
+    showMessage("Entre un mot de passe");
+    return;
+  }
+
+  const result = await apiLogin(pass);
+  if (result.ok) {
+    setToken(result.token);
+    const remote = await apiGetState();
+    if (remote) {
+      state = applyState(remote);
+    }
+    unlock();
+    return;
+  }
+
+  if (IS_LOCAL) {
+    const localPass = state.settings.adminPassword || "kahprod";
+    if (pass === localPass) {
+      unlock();
+      return;
+    }
+  }
+
+  showMessage(result.error || "Mot de passe incorrect");
 }
 
 if (loginButton) {
@@ -109,14 +220,30 @@ if (passwordInput) {
 
 checkLogin();
 
-function saveState() {
-  localStorage.setItem("kah-prod-data", JSON.stringify(state));
-  showMessage("Contenu enregistré");
+async function saveState() {
+  const token = getToken();
+  if (!token && !IS_LOCAL) {
+    showMessage("Connexion requise");
+    return;
+  }
+
+  let saved = false;
+  if (token) {
+    saved = await apiSaveState(token, state);
+  }
+
+  if (saved || IS_LOCAL) {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(state));
+    showMessage("Contenu enregistré");
+    return;
+  }
+
+  showMessage("Erreur sauvegarde API");
 }
 
-function resetState() {
-  state = normalizeState(clone(DEFAULT_DATA));
-  saveState();
+async function resetState() {
+  state = applyState(clone(DEFAULT_DATA));
+  await saveState();
   renderAll();
 }
 
@@ -143,8 +270,8 @@ if (importInput) {
     if (!file) return;
     const text = await file.text();
     try {
-      state = normalizeState(JSON.parse(text));
-      saveState();
+      state = applyState(JSON.parse(text));
+      await saveState();
       renderAll();
     } catch (error) {
       showMessage("JSON invalide");

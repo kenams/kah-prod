@@ -3,8 +3,12 @@
   "trailingSlash": true,
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/admin/", "destination": "/admin.html" },
     { "source": "/artists", "destination": "/artists.html" },
+    { "source": "/artists/", "destination": "/artists.html" },
     { "source": "/label", "destination": "/label.html" },
-    { "source": "/artist/al", "destination": "/artist-al.html" }
+    { "source": "/label/", "destination": "/label.html" },
+    { "source": "/artist/al", "destination": "/artist-al.html" },
+    { "source": "/artist/al/", "destination": "/artist-al.html" }
   ]
 }
