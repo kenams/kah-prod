@@ -1,18 +1,18 @@
 ﻿window.KAH_DATA = {
   settings: {
     adminPassword: "kahprod",
-    dataVersion: "2026-03-11-q-only"
+    dataVersion: "2026-03-12-label-independent"
   },
   brand: {
     name: "Kah-Prod",
-    tagline: "Amplifier le rap et la chanson, révéler les voix, construire des légendes."
+    tagline: "Amplifier les voix, révéler des talents, construire des légendes."
   },
   hero: {
-    pill: "Label rap & chanson - Toulouse / France",
+    pill: "Label indépendant - Toulouse / France",
     title: "Kah-Prod",
-    subtitle: "Amplifier le rap et la chanson, révéler les voix, construire des légendes.",
+    subtitle: "Amplifier les voix, révéler des talents, construire des légendes.",
     description:
-      "Depuis Toulouse, production premium, image ciné, stratégie digitale sur-mesure. Nous signons des artistes rap et chanson francophones ambitieux en France.",
+      "Depuis Toulouse, production premium, image ciné, stratégie digitale sur-mesure. Nous signons des artistes francophones ambitieux en France.",
     highlightTag: "Direction artistique - 4K - Premium",
     background: "/assets/placeholders/hero-kah.svg",
     release: {
@@ -223,8 +223,8 @@
   },
   label: {
     intro:
-      "Kah-Prod est un label rap et chanson basé à Toulouse. Nous accompagnons des artistes francophones en France avec une direction artistique forte.",
-    vision: "Créer les références rap et chanson francophones de demain en France.",
+      "Kah-Prod est un label indépendant basé à Toulouse. Nous accompagnons des artistes francophones en France avec une direction artistique forte.",
+    vision: "Créer les références francophones de demain en France.",
     values: [
       { title: "Culture Rap", text: "Une identité forte, un storytelling réel, un son qui frappe." },
       { title: "Excellence Visuelle", text: "Clips ciné, créations graphiques et univers cohérents." },
