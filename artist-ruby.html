@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kah-Prod - Ruby</title>
+    <meta
+      name="description"
+      content="Profil de l'artiste Ruby - projet en cours de signature, contenu en preparation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kah-Prod" />
+    <meta property="og:title" content="Kah-Prod - Ruby" />
+    <meta
+      property="og:description"
+      content="Profil de l'artiste Ruby - projet en cours de signature, contenu en preparation."
+    />
+    <meta property="og:image" content="/assets/og-kah-prod.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kah-Prod - Ruby" />
+    <meta
+      name="twitter:description"
+      content="Profil de l'artiste Ruby - projet en cours de signature, contenu en preparation."
+    />
+    <meta name="twitter:image" content="/assets/og-kah-prod.svg" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-artist="ruby">
+    <div class="bg-orbit"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-k-pattern"></div>
+
+    <header class="site-header" id="top">
+      <nav class="nav">
+        <a class="logo" href="/" aria-label="Kah-Prod">
+          <span class="logo-mark">K</span>
+          <span class="logo-word">
+            <span class="logo-text">Kah-Prod</span>
+            <span class="logo-tag">Label independant</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav>
+          <a href="/label/">Le Label</a>
+          <a href="/artists/">Artistes</a>
+          <a href="/#releases">Sorties</a>
+          <a href="/#videos">Clips</a>
+          <a href="/#events">Evenements</a>
+          <a href="/#socials">Reseaux</a>
+          <a href="/#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <a class="cta" href="/#contact">Collab</a>
+          <button class="nav-toggle" type="button" aria-label="Menu" data-nav-toggle>Menu</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="artist-hero">
+        <div class="artist-hero-media" data-artist-photo></div>
+        <div class="artist-hero-content">
+          <div class="pill" data-artist-pill>Style - Ville</div>
+          <h1 data-artist-name>Artiste</h1>
+          <p data-artist-bio>Bio artiste.</p>
+          <div class="hero-actions">
+            <a class="cta" href="#discography">Discographie</a>
+            <a class="ghost" href="#videos">Clips</a>
+          </div>
+          <div class="artist-stats" data-artist-stats></div>
+        </div>
+      </section>
+
+      <section class="section" id="portrait">
+        <div class="section-head">
+          <h2>Portrait</h2>
+          <p data-artist-tagline>Signature artistique.</p>
+        </div>
+        <div class="portrait-grid">
+          <div class="portrait-card reveal">
+            <h3>Manifeste</h3>
+            <p data-artist-story>Texte artiste.</p>
+          </div>
+          <div class="portrait-card reveal">
+            <h3>Signature</h3>
+            <ul class="tag-list" data-artist-signature></ul>
+          </div>
+          <div class="portrait-card reveal">
+            <h3>Themes</h3>
+            <ul class="tag-list" data-artist-themes></ul>
+          </div>
+        </div>
+        <blockquote class="artist-quote" data-artist-quote>""</blockquote>
+      </section>
+
+      <section class="section" id="highlights">
+        <div class="section-head">
+          <h2>Highlights</h2>
+          <p>Points forts de l'artiste.</p>
+        </div>
+        <div class="highlight-grid" data-artist-highlights></div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <h2>Timeline</h2>
+          <p>Parcours et etapes cles.</p>
+        </div>
+        <div class="timeline" data-artist-timeline></div>
+      </section>
+
+      <section class="section" id="press">
+        <div class="section-head">
+          <h2>Presse & Press kit</h2>
+          <p>Contact presse, suivi du projet et informations a venir.</p>
+        </div>
+        <p class="press-text" data-artist-press></p>
+        <div class="press-actions">
+          <a class="cta" data-artist-presslink href="#" target="_blank" rel="noopener">Press kit</a>
+          <a class="ghost" data-artist-pressmail href="#">Contact presse</a>
+        </div>
+        <div class="socials" data-artist-socials></div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-head">
+          <h2>Galerie</h2>
+          <p>Visuels et contenus a venir.</p>
+        </div>
+        <div class="gallery-grid" data-artist-gallery></div>
+      </section>
+
+      <section class="section" id="discography">
+        <div class="section-head">
+          <h2>Discographie</h2>
+          <p>Sorties majeures de l'artiste.</p>
+        </div>
+        <div class="release-grid" data-artist-releases></div>
+      </section>
+
+      <section class="section" id="videos">
+        <div class="section-head">
+          <h2>Clips</h2>
+          <p>Visuels officiels.</p>
+        </div>
+        <div class="video-grid" data-artist-videos></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Booking</h2>
+          <p>Dates et collaborations.</p>
+        </div>
+        <div class="booking-card reveal">
+          <p data-contact-booking>booking@kah-prod.com</p>
+          <button type="button">Demander une date</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Kah-Prod (c) 2026</div>
+      <div class="footer-links">
+        <a href="/artists/">Retour aux artistes</a>
+        <a href="/label/">Le Label</a>
+        <a href="https://www.instagram.com/le_kah_prod_/" target="_blank" rel="noopener" data-footer-instagram>
+          Instagram
+        </a>
+        <a href="/#contact">Contact</a>
+        <a href="/admin/">Admin</a>
+      </div>
+    </footer>
+
+    <script src="/data.js?v=20260324-1"></script>
+    <script src="/scripts.js"></script>
+  </body>
+</html>

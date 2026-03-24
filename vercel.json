@@ -9,6 +9,8 @@
     { "source": "/label", "destination": "/label.html" },
     { "source": "/label/", "destination": "/label.html" },
     { "source": "/artist/al", "destination": "/artist-al.html" },
-    { "source": "/artist/al/", "destination": "/artist-al.html" }
+    { "source": "/artist/al/", "destination": "/artist-al.html" },
+    { "source": "/artist/ruby", "destination": "/artist-ruby.html" },
+    { "source": "/artist/ruby/", "destination": "/artist-ruby.html" }
   ]
 }

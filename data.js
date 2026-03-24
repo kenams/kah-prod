@@ -32,8 +32,8 @@
   },
   stats: [
     { value: "1", label: "Artiste signé" },
-    { value: "3 ans", label: "Expérience terrain" },
-    { value: "1", label: "Clip phare en production" }
+    { value: "1", label: "Signature en cours" },
+    { value: "3 ans", label: "Expérience terrain" }
   ],
   signature: [
     {
@@ -150,6 +150,69 @@
         "/assets/placeholders/artist-04.svg",
         "/assets/placeholders/artist-05.svg"
       ]
+    },
+    {
+      slug: "ruby",
+      name: "Ruby",
+      photo: "/assets/placeholders/artist-02.svg",
+      flagship: false,
+      status: "En cours de signature",
+      style: "Rap / RnB",
+      city: "France",
+      highlight: "En cours de signature - 5 ans d'experience",
+      bio:
+        "Ruby est un projet en developpement avec 5 ans d'experience. L'univers est en cours de structuration et les premieres sorties arrivent bientot.",
+      metrics: [
+        { value: "5 ans", label: "D'experience" },
+        { value: "En cours", label: "De signature" },
+        { value: "Bientot", label: "Contenu public" }
+      ],
+      tagline: "Une identite en construction, avec un vrai potentiel et une sortie de contenu en preparation.",
+      story:
+        "Ruby avance actuellement sur la signature, la direction artistique et la mise en production des premiers contenus. Aucun clip ni morceau n'est encore publie, mais la ligne creative est en cours de finalisation pour sortir sur des bases propres.",
+      quote: "Le projet se construit maintenant. Les sorties viendront quand le niveau sera pret.",
+      highlights: [
+        {
+          title: "5 ans d'experience",
+          text: "Un vecu artistique deja solide, avec un projet qui entre maintenant dans une phase plus structuree."
+        },
+        {
+          title: "Production en cours",
+          text: "Les morceaux, l'image et le positionnement sont en cours de preparation avant les premieres publications."
+        },
+        {
+          title: "Lancement bientot",
+          text: "Le contenu arrive prochainement avec une base plus claire, plus forte et plus coherente."
+        }
+      ],
+      themes: ["Construction", "Identite", "Ambition", "Preparation"],
+      signature: ["Projet en developpement", "Univers en construction", "Contenu bientot"],
+      timeline: [
+        {
+          year: "2021",
+          title: "Debut du parcours",
+          description: "Premieres phases de travail et d'exploration artistique."
+        },
+        {
+          year: "2026",
+          title: "Signature en cours",
+          description: "Mise en place de la direction artistique, de la production et de l'image."
+        }
+      ],
+      press: {
+        text: "Ruby est actuellement en phase de developpement. Les premiers supports presse et contenus arriveront apres les premieres sorties.",
+        kit: "",
+        mail: "press@kah-prod.com"
+      },
+      socials: {
+        instagram: "",
+        tiktok: "",
+        youtube: "",
+        spotify: ""
+      },
+      discography: [],
+      videos: [],
+      gallery: []
     }
   ],
   releases: [

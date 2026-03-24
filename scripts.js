@@ -242,14 +242,13 @@ function renderArtists() {
   const wrap = document.querySelector("[data-artists]");
   if (wrap && DATA.artists) {
     wrap.innerHTML = DATA.artists
-      .map(
-        (artist) => `
+      .map((artist) => {
+        const badges = [];
+        if (artist.flagship || (DATA.featured && artist.slug === DATA.featured.slug)) badges.push("Phare");
+        if (artist.status) badges.push(artist.status);
+        return `
         <article class="artist-card reveal">
-          ${
-            artist.flagship || (DATA.featured && artist.slug === DATA.featured.slug)
-              ? '<span class="badge">Phare</span>'
-              : ""
-          }
+          ${badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
           <div class="artist-photo" data-letter="${artist.name ? artist.name[0] : "K"}" data-photo="${artist.photo || ""}"></div>
           <div class="artist-info">
             <h3>${artist.name}</h3>
@@ -258,30 +257,29 @@ function renderArtists() {
             <a class="link" href="/artist/${artist.slug}/">Voir le profil</a>
           </div>
         </article>
-      `
-      )
+      `;
+      })
       .join("");
   }
 
   const roster = document.querySelector("[data-roster]");
   if (roster && DATA.artists) {
     roster.innerHTML = DATA.artists
-      .map(
-        (artist) => `
+      .map((artist) => {
+        const badges = [];
+        if (artist.flagship || (DATA.featured && artist.slug === DATA.featured.slug)) badges.push("Phare");
+        if (artist.status) badges.push(artist.status);
+        return `
         <a class="roster-card reveal" href="/artist/${artist.slug}/">
-          ${
-            artist.flagship || (DATA.featured && artist.slug === DATA.featured.slug)
-              ? '<span class="badge">Phare</span>'
-              : ""
-          }
+          ${badges.map((badge) => `<span class="badge">${badge}</span>`).join("")}
           <div class="roster-photo" data-letter="${artist.name ? artist.name[0] : "K"}" data-photo="${artist.photo || ""}"></div>
           <div>
             <h3>${artist.name}</h3>
             <p>${artist.style} - ${artist.city}</p>
           </div>
         </a>
-      `
-      )
+      `;
+      })
       .join("");
   }
 
@@ -655,7 +653,8 @@ function renderArtistPage() {
   }
 
   const releases = document.querySelector("[data-artist-releases]");
-  if (releases && artist.discography) {
+  const discographySection = document.querySelector("#discography");
+  if (releases && artist.discography && artist.discography.length) {
     releases.innerHTML = artist.discography
       .map(
         (release) => `
@@ -675,10 +674,16 @@ function renderArtistPage() {
       `
       )
       .join("");
+  } else if (releases) {
+    releases.innerHTML = "";
+  }
+  if (discographySection) {
+    discographySection.hidden = !(artist.discography && artist.discography.length);
   }
 
   const videos = document.querySelector("[data-artist-videos]");
-  if (videos && artist.videos) {
+  const videosSection = document.querySelector("#videos");
+  if (videos && artist.videos && artist.videos.length) {
     videos.innerHTML = artist.videos
       .map((video) => {
         const tag = video.link ? "a" : "div";
@@ -696,6 +701,21 @@ function renderArtistPage() {
       `;
       })
       .join("");
+  } else if (videos) {
+    videos.innerHTML = "";
+  }
+  if (videosSection) {
+    videosSection.hidden = !(artist.videos && artist.videos.length);
+  }
+
+  const heroPrimaryCta = document.querySelector('.artist-hero .hero-actions .cta[href="#discography"]');
+  if (heroPrimaryCta) {
+    heroPrimaryCta.hidden = !(artist.discography && artist.discography.length);
+  }
+
+  const heroSecondaryCta = document.querySelector('.artist-hero .hero-actions .ghost[href="#videos"]');
+  if (heroSecondaryCta) {
+    heroSecondaryCta.hidden = !(artist.videos && artist.videos.length);
   }
 }
 
