@@ -154,7 +154,7 @@
     {
       slug: "ruby",
       name: "Ruby",
-      photo: "/assets/placeholders/artist-02.svg",
+      photo: "/assets/artist-ruby-logo.svg",
       flagship: false,
       status: "En cours de signature",
       style: "Rap / RnB",

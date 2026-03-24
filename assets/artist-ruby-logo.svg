@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Logo Ruby">
+  <defs>
+    <linearGradient id="ruby-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#120d12" />
+      <stop offset="55%" stop-color="#23131d" />
+      <stop offset="100%" stop-color="#08080c" />
+    </linearGradient>
+    <radialGradient id="ruby-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 150) rotate(32) scale(240 220)">
+      <stop offset="0%" stop-color="#ff7aa5" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#ff7aa5" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ruby-metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff3ea" />
+      <stop offset="38%" stop-color="#d8b56a" />
+      <stop offset="72%" stop-color="#fff0dd" />
+      <stop offset="100%" stop-color="#8d6a30" />
+    </linearGradient>
+    <linearGradient id="ruby-red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff6f91" />
+      <stop offset="55%" stop-color="#d61f5b" />
+      <stop offset="100%" stop-color="#84103e" />
+    </linearGradient>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="640" height="480" fill="url(#ruby-bg)" />
+  <rect width="640" height="480" fill="url(#ruby-glow)" />
+  <rect x="24" y="24" width="592" height="432" rx="30" fill="none" stroke="#ffffff" opacity="0.08" />
+
+  <g filter="url(#soft-glow)">
+    <path
+      d="M136 322L204 122H304L364 192L334 286L258 346H172Z"
+      fill="none"
+      stroke="url(#ruby-red)"
+      stroke-width="10"
+      opacity="0.9"
+    />
+    <path
+      d="M184 176H280L318 216L298 274L248 314H186L210 246H246L264 222L252 204H202Z"
+      fill="none"
+      stroke="#ffd6e2"
+      stroke-width="4"
+      opacity="0.75"
+    />
+  </g>
+
+  <text x="365" y="262" font-family="Bodoni Moda, serif" font-size="148" fill="url(#ruby-metal)">R</text>
+  <text x="362" y="316" font-family="Space Grotesk, sans-serif" font-size="42" letter-spacing="10" fill="#f7e2bf">
+    RUBY
+  </text>
+  <text x="364" y="352" font-family="Space Grotesk, sans-serif" font-size="15" letter-spacing="5" fill="#c8b39a" opacity="0.82">
+    EN COURS DE SIGNATURE
+  </text>
+
+  <rect x="365" y="188" width="152" height="2" fill="#d8b56a" opacity="0.55" />
+  <rect x="365" y="372" width="116" height="2" fill="#d8b56a" opacity="0.4" />
+
+  <text x="52" y="432" font-family="Space Grotesk, sans-serif" font-size="18" letter-spacing="6" fill="#d8b56a">
+    KAH-PROD
+  </text>
+</svg>
