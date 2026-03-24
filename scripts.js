@@ -477,7 +477,8 @@ function renderArtistPage() {
   if (!artist) return;
 
   setText("[data-artist-name]", artist.name);
-  setText("[data-artist-pill]", `${artist.style} - ${artist.city}`);
+  const artistPill = [artist.style, artist.city, artist.status].filter(Boolean).join(" - ");
+  setText("[data-artist-pill]", artistPill);
   setText("[data-artist-bio]", artist.bio);
 
   const photo = document.querySelector("[data-artist-photo]");

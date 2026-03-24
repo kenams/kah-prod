@@ -157,50 +157,50 @@
       photo: "/assets/artist-ruby-logo.svg",
       flagship: false,
       status: "En cours de signature",
-      style: "Rap / RnB",
+      style: "Rap melodique / RnB",
       city: "France",
-      highlight: "En cours de signature - 5 ans d'experience",
+      highlight: "Talent en developpement - 5 ans d'experience",
       bio:
-        "Ruby est un projet en developpement avec 5 ans d'experience. L'univers est en cours de structuration et les premieres sorties arrivent bientot.",
+        "Ruby est un projet en developpement avec 5 ans d'experience. La direction artistique, les premiers titres et l'image sont en cours de finalisation pour un lancement propre et ambitieux.",
       metrics: [
         { value: "5 ans", label: "D'experience" },
-        { value: "En cours", label: "De signature" },
-        { value: "Bientot", label: "Contenu public" }
+        { value: "Signature", label: "En cours" },
+        { value: "Sorties", label: "Bientot" }
       ],
-      tagline: "Une identite en construction, avec un vrai potentiel et une sortie de contenu en preparation.",
+      tagline: "Une proposition artistique en construction, avec une vraie identite et un lancement pense pour durer.",
       story:
-        "Ruby avance actuellement sur la signature, la direction artistique et la mise en production des premiers contenus. Aucun clip ni morceau n'est encore publie, mais la ligne creative est en cours de finalisation pour sortir sur des bases propres.",
-      quote: "Le projet se construit maintenant. Les sorties viendront quand le niveau sera pret.",
+        "Ruby entre dans une phase de structuration plus exigeante : selection des morceaux, mise en place de l'image, coherence du propos et preparation des premiers contenus. L'objectif n'est pas de sortir vite, mais de poser une base forte avec un univers lisible, des titres solides et une vraie direction.",
+      quote: "On construit d'abord l'univers. Le contenu viendra quand tout sera au bon niveau.",
       highlights: [
         {
           title: "5 ans d'experience",
-          text: "Un vecu artistique deja solide, avec un projet qui entre maintenant dans une phase plus structuree."
+          text: "Un parcours deja construit, avec assez de recul pour lancer la suite sur des bases plus serieuses."
         },
         {
-          title: "Production en cours",
-          text: "Les morceaux, l'image et le positionnement sont en cours de preparation avant les premieres publications."
+          title: "Direction artistique en place",
+          text: "Le projet se clarifie autour d'un positionnement plus net, d'une image plus forte et d'une execution plus propre."
         },
         {
-          title: "Lancement bientot",
-          text: "Le contenu arrive prochainement avec une base plus claire, plus forte et plus coherente."
+          title: "Lancement en preparation",
+          text: "Les premieres sorties arrivent bientot, avec une volonte de lancer Ruby de maniere propre et coherente."
         }
       ],
-      themes: ["Construction", "Identite", "Ambition", "Preparation"],
-      signature: ["Projet en developpement", "Univers en construction", "Contenu bientot"],
+      themes: ["Construction", "Identite", "Evolution", "Ambition"],
+      signature: ["Univers en construction", "Rap melodique", "Contenu bientot"],
       timeline: [
         {
           year: "2021",
-          title: "Debut du parcours",
-          description: "Premieres phases de travail et d'exploration artistique."
+          title: "Premieres bases",
+          description: "Debut du parcours artistique et premieres phases d'exploration."
         },
         {
           year: "2026",
           title: "Signature en cours",
-          description: "Mise en place de la direction artistique, de la production et de l'image."
+          description: "Structuration du projet, production des premiers contenus et mise en place de l'image."
         }
       ],
       press: {
-        text: "Ruby est actuellement en phase de developpement. Les premiers supports presse et contenus arriveront apres les premieres sorties.",
+        text: "Ruby est actuellement en phase de developpement. Les supports presse, les sorties et les contenus visuels seront communiques au moment du lancement officiel.",
         kit: "",
         mail: "press@kah-prod.com"
       },
